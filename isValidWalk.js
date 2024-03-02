@@ -3,43 +3,37 @@ and will, of course, return you to your starting point. Return false otherwise.
 
 Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).
 
- 
 
 https://www.codewars.com/kata/54da539698b8a2ad76000228/train/javascript
 
 */
 
- 
-
 //Solution
 
- 
-
 function isValidWalk(walk) {
+    let dx = 0;
+    let dy = 0;
+    let dt = walk.length;
+    if (dt != 10) {
+    return false;
+    }
 
-  let dx = 0;
-  let dy = 0;
-  let dt = walk.length;
-  if (dt != 10) {
-      return false;
-  }
+    walk.forEach((direction) => {
+        switch (direction) {
+        case "n":
+            dx++;
+            break;
+        case "s":
+            dx--;
+            break;
+        case "e":
+            dy++;
+            break;
+        case "w":
+            dy--;
+            break;
+        }
+    });
 
-  walk.forEach((direction) => {
-      switch (direction) {
-          case "n":
-              dx++;
-              break;
-          case "s":
-              dx--;
-              break;
-          case "e":
-              dy++;
-              break;
-          case "w":
-              dy--;
-              break;
-      }
-  });
-
-  return dx == 0 && dy == 0 ? true : false;
+    return dx == 0 && dy == 0 ? true : false;
 }
