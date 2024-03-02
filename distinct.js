@@ -13,13 +13,5 @@ https://www.codewars.com/kata/57a5b0dfcf1fa526bb000118/train/javascript
 
 //Solution
 function distinct(a) {
-    let seen = [];
-    return a.filter(num =>{
-        if(seen.includes(num)){
-            return false
-        } else {
-            seen.push(num);
-            return true
-        }
-    })
+    return [...new Set(a)]
 }
