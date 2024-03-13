@@ -19,14 +19,10 @@ https://www.codewars.com/kata/556deca17c58da83c00002db
 
 //Solution
 function tribonacci(signature,n){
-    if(n == 0){
-      return []
+    for(let i = 0; i < n - 3; i++){
+      let number = signature[i] + signature[i+1] + signature[i+2];
+      signature.push(number)
     }
     
-    let result = signature;
-    while(result.length < n){
-      let number = result.slice(-1)[0] + result.slice(-2,-1)[0] + result.slice(-3,-2)[0];
-      result.push(number)
-    }
-   return result.slice(0,n) 
+   return signature.slice(0,n)
   }
