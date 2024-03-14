@@ -41,15 +41,7 @@ https://www.codewars.com/kata/54b724efac3d5402db00065e
 //Solution
 decodeMorse = function(morseCode){
     // You can use MORSE_CODE[morse]
-    morseCode = morseCode.trim();
-    let morseWords = morseCode.split('   ');
-    
-    return morseWords.map(morseWord => {
-      let word = ''
-      morseWord.split(' ').map(morseChar =>{
-        word += MORSE_CODE[morseChar];
-        return word
-      });
-      return word;
-    }).join(' ')
+    return morseCode.trim().split(/  | /)
+      .map(morse => MORSE_CODE[morse] || ' ')
+      .join('')
    }
