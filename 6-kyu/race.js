@@ -21,16 +21,11 @@ function race(v1, v2, g) {
     if(v1 >= v2){
       return null;
     }
-  
   let time = -g/(v1-v2) //hours
   let hours = Math.floor(time);
-  let minutes = Math.floor((time % 1) * 60);
-  let seconds = Math.floor((((time % 1) * 60) % 1 * 60).toFixed(2));
-  
-  if(seconds == 60){
-    seconds = 0;
-    minutes++;
-  }
+  let minutes = Math.floor((time * 60 % 60));
+  let seconds = Math.floor(time * 3600 % 60);
+
   
   return [hours, minutes, seconds]
 }
