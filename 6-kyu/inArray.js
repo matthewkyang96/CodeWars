@@ -23,14 +23,6 @@ https://www.codewars.com/kata/550554fd08b86f84fe000a58*/
 
 //Solution
 function inArray(array1,array2){
-    array1.sort();
-    let result = [];
-    for(let i = 0; i < array1.length; i++){
-      for(let j = 0; j < array2.length; j++){
-        if(array2[j].includes(array1[i]) && !result.includes(array1[i])){
-          result.push(array1[i])
-        }
-      }
-    }
-    return result
+    let joined = array2.join(' ');
+    return array1.filter(string => joined.indexOf(string) !== -1).sort()
   }
