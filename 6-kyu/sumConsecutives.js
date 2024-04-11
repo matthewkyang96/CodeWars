@@ -1,6 +1,6 @@
-You are given a list/array which contains only integers (positive and negative). Your job is to sum only the numbers that are the same and consecutive. The result should be one list.
+/* You are given a list/array which contains only integers (positive and negative). Your job is to sum only the numbers that are the same and consecutive. The result should be one list.
 
-/* Extra credit if you solve it in one line. You can assume there is never an empty list/array and there will always be an integer.
+Extra credit if you solve it in one line. You can assume there is never an empty list/array and there will always be an integer.
 
 Same meaning: 1 == 1
 
@@ -16,7 +16,7 @@ sum of 0... and sum of 2
 consecutives 3 is 6 ..."""
 
 [1,1,7,7,3] # should return [2,14,3]
-[-5,-5,7,7,12,0] # should return [-10,14,12,0] */
+[-5,-5,7,7,12,0] # should return [-10,14,12,0]  */
 
 //Solution
 function sumConsecutives(s) {
