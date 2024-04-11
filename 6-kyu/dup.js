@@ -12,15 +12,10 @@ https://www.codewars.com/kata/59f08f89a5e129c543000069 */
 
 //Solution
 function dup(s) {
-    return s.map(word => {
-      let res = word[0]
-      for(let i = 1; i < word.length; ++i){
-        let prevChar = word[i-1];
-        let char = word[i]
-  
-        if(char != prevChar){
-         res += char 
-        }
-      }
-      return res
-  })}
+  return s.map((word) => {
+    return word
+      .split("")
+      .filter((char, i, arr) => char !== arr[i - 1])
+      .join("");
+  });
+}
