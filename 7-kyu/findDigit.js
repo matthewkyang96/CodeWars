@@ -14,18 +14,10 @@
 // 24, -8 --> -1
 
 var findDigit = function(num, nth){
-  
-    if(nth <= 0){
-      return -1
-    }
-  
-    num = Math.abs(num);
-    
-    if(nth > num.toString().length){
-      return 0
-    }
-  
-    
-   return (Number(num.toString().split('').slice(-nth)[0]))
-    
+    if(nth <= 0)
+      return -1;
+     
+    var x = Math.abs(num);
+    x = Math.floor(x / Math.pow(10, nth - 1))
+    return x%10;
 }
