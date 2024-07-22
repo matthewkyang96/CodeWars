@@ -11,24 +11,10 @@ function streetFighterSelection(fighters, position, moves) {
 
   for (let move of moves) {
     let [dx, dy] = direction[move];
-    x += dx;
-    y += dy;
 
-    if (y < 0) {
-      y = 0;
-    }
+    x = (x + dx + fighters[0].length) % fighters[0].length;
+    y = Math.max(0, Math.min(y + dy, fighters.length - 1));
 
-    if (x < 0) {
-      x = fighters[0].length - 1;
-    }
-
-    if (y > fighters.length - 1) {
-      y = 1;
-    }
-
-    if (x > fighters[0].length - 1) {
-      x = 0;
-    }
     res.push(fighters[y][x]);
   }
   return res;
