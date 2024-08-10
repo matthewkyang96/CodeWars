@@ -1,28 +1,11 @@
 function scoreboard(whoAteWhat) {
-  const points = {
-    chickenwings: 5,
-    hamburgers: 3,
-    hotdogs: 2,
-  };
-
-  const scoreBoard = [];
-
-  for (let person of whoAteWhat) {
-    const score = {};
-    score.name = person.name;
-    score.score =
-      person.chickenwings * points.chickenwings +
-      person.hamburgers * points.hamburgers +
-      person.hotdogs * points.hotdogs;
-    scoreBoard.push(score);
-  }
-
-  scoreBoard.sort((a, b) => {
-    if (b.score - a.score == 0) {
-      return a.name.localeCompare(b.name);
-    }
-    return b.score - a.score;
-  });
-
-  return scoreBoard;
+  return whoAteWhat
+    .map((person) => {
+      return {
+        name: person.name,
+        score:
+          person.chickenwings * 5 + person.hamburgers * 3 + person.hotdogs * 2,
+      };
+    })
+    .sort((a, b) => b.score - a.score || a.name > b.name);
 }
