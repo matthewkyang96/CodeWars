@@ -1,3 +1,5 @@
+#include <stddef.h>
+
 int diffsum(const int *arr, size_t n)
 {
     int min = arr[0];
